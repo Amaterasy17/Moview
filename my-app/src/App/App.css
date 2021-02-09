@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    padding: 3px 0 0 0;
+}
+
+.background{
+    background: linear-gradient(to bottom, #ffffff, #f2f0fb);
+}
+
+@font-face {
+    font-family: Montserrat-SemiBold;
+    src: url("../styles/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: Montserrat-Light;
+    src: url("../styles/fonts/Montserrat-Light.ttf");
+}
+
+.duration {
+    font-family: Montserrat-Light;
+    display: none;
+    background:#a287db;
+    color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-size: 14px;
+    padding: 3px 5px;
+}
+
+.views {
+    font-family: Montserrat-Light;
+    display: none;
+    background: #a287db;
+    color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 14px;
+    padding: 3px 5px;
+}
+
+.image-content:hover .views{
+    display: block;
+}
+
+.image-content:hover .duration{
+    display: inline-block;
+}

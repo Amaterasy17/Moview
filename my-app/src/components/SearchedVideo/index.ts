@@ -1,0 +1,1 @@
+export {SearchedVideo} from './SearchedVideo'
