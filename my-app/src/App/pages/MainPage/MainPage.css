@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 88vh;
+    margin-top: 1vh;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: scroll;
+    justify-content: space-around;
+}
+
+.main::-webkit-scrollbar{
+    width: 0px;
+}
