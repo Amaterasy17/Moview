@@ -1,6 +1,7 @@
 body{
   margin:0;
   padding: 3px 0 0 0;
+  padding-bottom: o;
 }
 
 .background{
@@ -43,10 +44,6 @@ body{
   font-weight: 500;
   font-size: 22px;
   color:#030303;
-  display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow-y: hidden;
     font-family: Montserrat-SemiBold;
     background: linear-gradient(to right,#e334b5 0%, #9b90df 50%,#84abec 100%); /* Градиент для текста */
   -webkit-background-clip: text; /* Обрезаем фон по тексту */
@@ -61,6 +58,32 @@ body{
   
 }
 
+.player-channel-info
+{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-top: 1vh;
+}
+
+
+.player-channel-textinfo{
+
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1vw;
+}
+
+.player-video-description{
+  margin-top: 1vh;
+  overflow: scroll;
+}
+
+.player-undername{
+  text-align: left;
+}
 
 .player-view{
   font-size: 14px;
@@ -196,15 +219,17 @@ button:before {
 
 .player-channel-img{
   border-radius: 50%;
-  width: 44px;
-  height: 44px; 
+  width: 48px;
+  height: 48px; 
 }
 
 
 .player-img{
   margin-top: 2vh;
-  width: 70vw;
-  height: 65vh;
+  width: 60vw;
+  height: 69vh;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  border-radius: 25px;
 
 }
 
@@ -212,6 +237,8 @@ button:before {
  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 1vh;
 }
 
 
@@ -294,7 +321,8 @@ button:before {
 
 .player-image-content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
 }
 .player-video {
     display: flex;
@@ -303,7 +331,30 @@ button:before {
 }
 .player {
     display: flex;
-    align-items: center;
-    justify-content: center;
+     flex-direction: row;
+     justify-content: space-around;
     width: 100vw;
+    margin-left: 1.6%;
+    margin-right: 1.6%;
 }
+
+.player-description {
+  display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     margin-left: 2vw;
+     margin-top: 2vh;
+
+     
+}
+
+
+.player-video-description::-webkit-scrollbar{
+    width: 0px;
+} 
+
+.player-video-description{
+max-height: 52vh;
+     overflow: scroll;
+
+   }
