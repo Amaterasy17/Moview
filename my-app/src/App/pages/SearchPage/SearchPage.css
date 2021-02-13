@@ -7,6 +7,6 @@
     overflow: scroll;
 }
 
-.search::-webkit-scrollbar{
+.search::-webkit-scrollbar {
     width: 0px;
 }
