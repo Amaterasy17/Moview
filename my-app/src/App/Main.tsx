@@ -1,36 +1,12 @@
 import React from 'react';
-import {BrowserRouter, Route} from "react-router-dom";
-import {Main} from "./Main";
-import './App.css';
-import {urls} from "../configs/routes";
+import {Route, Switch, Redirect, useParams} from 'react-router-dom';
 
-
+import {MainPage} from "./pages/MainPage";
 import {PlayerPage} from "./pages/PlayerPage";
+import {SearchPage} from "./pages/SearchPage";
 
-
-const items1 = {
-    video: 'https://www.youtube.com/embed/F8m8-cMpP6E',
-    views: '300 тыс. просмотров',
-    title: ' Full Body & Abs Workout | 20 Min + ANNOUNCEMENT',
-    date: '21 января 2020',
-    avatar: 'https://yt3.ggpht.com/ytc/AAUvwngN64q7ozmpEshPSDigUCsd0UTu6I1yOjbjMitEwg=s88-c-k-c0x00ffffff-no-rj',
-    nickname: 'Chloe Ting',
-    description: 'Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!',
-    subscribers: '456 345 подписчиков',
-}
-
+import {urls} from '../configs/routes'
+import {videoUrl} from "../configs/ApiUrls";
 
 const items = [
 
@@ -139,14 +115,50 @@ const items = [
 
 ];
 
+const items1 = {
+    video: 'https://www.youtube.com/embed/F8m8-cMpP6E',
+    views: '300 тыс. просмотров',
+    title: ' Full Body & Abs Workout | 20 Min + ANNOUNCEMENT',
+    date: '21 января 2020',
+    avatar: 'https://yt3.ggpht.com/ytc/AAUvwngN64q7ozmpEshPSDigUCsd0UTu6I1yOjbjMitEwg=s88-c-k-c0x00ffffff-no-rj',
+    nickname: 'Chloe Ting',
+    description: 'Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
+        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
+        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!',
+    subscribers: '456 345 подписчиков',
+}
 
-export function App() {
+const VideoID = () => {
+    console.log(useParams());
+    const { id } = useParams() as any;
+    console.log(id);
+    items1.video =  videoUrl + id;
+}
+
+export const Main = () => {
+
     return (
         <div>
-            <BrowserRouter>
-                <Route path={urls.Root} component={Main}></Route>
-                {/*<PlayerPage items={items1} mitems={items}></PlayerPage>*/}
-            </BrowserRouter>
+            <Switch>
+                <Route path={urls.Videos}>
+                    <MainPage items={items}></MainPage>
+                </Route>
+                <Route path={urls.Video.mask}
+                       render = {(props) => <PlayerPage {...props} items={items1} mitems={items}/>}>
+                </Route>
+                <Route path={urls.Search} render={(props) => <SearchPage {...props} items={items}/>}></Route>
+                <Redirect to={urls.Videos}></Redirect>
+            </Switch>
         </div>
     );
 }
