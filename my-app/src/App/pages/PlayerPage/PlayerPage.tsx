@@ -1,27 +1,31 @@
 import {Header} from '../../../components/Header/index';
 import {PlayerVideo} from "../../../components/PlayerVideo";
+import {MainVideo} from "../../../components/MainVideo";
 import './PlayerPage.css';
+import '../MainPage/MainPage.css';
 
-const Player= ({items}: any) => {
+
+const MVideo = ({items}: any) => {
     return (
-        <div className="player">
-            {/*{*/}
-            {/*    items.((item: any) => {*/}
-            {/*        return <PlayerVideo items={item}></PlayerVideo>;*/}
-            {/*    })*/}
-            {/*}*/}
+        <div className="main">
+            {
+                items.map((item: any) => {
+                    return <MainVideo items={item}></MainVideo>;
+                })
+            }
         </div>
     );
 };
 
 
 export const PlayerPage = (props: any) => {
-    console.log('В PlayerPage')
-    console.log(props)
     return (
         <div>
             <Header></Header>
-            <PlayerVideo items={props.items}></PlayerVideo>
+            <div className="play background">
+                <PlayerVideo items={props.items}></PlayerVideo>
+                <MVideo items={props.mitems}></MVideo>
+            </div>
         </div>
     );
 }

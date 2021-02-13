@@ -10,11 +10,12 @@ export const MainVideo = ({items}: any) => {
                 <span className="views">{items.views}</span>
             </div>
             <div className="bottom-info">
-                <div> <img className="channel-logo" src={items.avatar}/> </div>
+                <div><img className="channel-logo" src={items.avatar}/></div>
                 <div className="right-info">
                     <div className="heading">{items.title}</div>
                     <div className="low">
-                        <div className="name-channel">{items.nickname}</div> ·
+                        <div className="name-channel">{items.nickname}</div>
+                        ·
                         <div className="time"> {items.time}</div>
                     </div>
                 </div>
