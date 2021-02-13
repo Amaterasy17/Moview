@@ -7,7 +7,7 @@ import '../MainPage/MainPage.css';
 
 const MVideo = ({items}: any) => {
     return (
-        <div className="main">
+        <div className="player-back">
             {
                 items.map((item: any) => {
                     return <MainVideo items={item}></MainVideo>;
