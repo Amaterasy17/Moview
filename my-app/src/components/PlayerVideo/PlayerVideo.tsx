@@ -1,7 +1,9 @@
 import React from 'react';
 import './PlayerVideo.css'
 import axios from "axios";
-import {ApiKey, channelById, videoById} from "../../configs/ApiUrls";
+import {ApiKey, channelById, videoById, videoUrl} from "../../configs/ApiUrls";
+
+import {Ajax, ajax} from '../../utils/ajax'
 
 type VideoContent = {
     video: string,
@@ -14,61 +16,47 @@ type VideoContent = {
     description: string,
 }
 
-export const PlayerVideo = ({items, id}: any) => {
+export const PlayerVideo = ({id}: any) => {
     const [content, setContent] = React.useState({
-        video: undefined,
+        video: '',
         title: undefined,
-        views: undefined,
-        date: undefined,
+        views: '',
+        date: '',
+        description: undefined,
+        });
+
+    const [user, setUser] = React.useState({
         avatar: undefined,
         nickname: undefined,
-        subscribers: undefined,
-        description: undefined,
-        }
-    );
+        subscribers: '',
+    });
 
     React.useEffect( () => {
-        const getVideoContent = async () => {
-            console.log(videoById + id + ApiKey);
-
-            const response = await axios(
-                {
-                    method: 'get',
-                    url: videoById + id + ApiKey,
-                }
-            );
-            console.log(response);
-            return response;
-        }
-        getVideoContent().then( ({data}:any) => {
-                setContent({
-                    video: items.video,
+        ajax({
+            method: 'get',
+            url: videoById + id + ApiKey,
+        }).then( ({data}) => {
+            setContent({
+                    video: videoUrl + id,
                     title: data.items[0].snippet.title,
-                    views: data.items[0].statistics.viewCount,
-                    date: data.items[0].snippet.publishedAt,
-                    avatar: undefined,
-                    nickname: data.items[0].snippet.channelTitle,
-                    subscribers: undefined,
+                    views: data.items[0].statistics.viewCount + ' просмотров ',
+                    date: new Date(data.items[0].snippet.publishedAt).getDate() + '.' +
+                        new Date(data.items[0].snippet.publishedAt).getMonth() + '.' +
+                        new Date(data.items[0].snippet.publishedAt).getFullYear(),
                     description: data.items[0].snippet.description,
-                    }
-                );
-            const getChannelInfo = async () => {
-                    return axios({
-                        method: 'get',
-                        url: channelById + data.items[0].snippet.channelId + ApiKey,
-                    });
-            }
-            getChannelInfo().then(({data}) => {
-                content.subscribers = data.items[0].statistics.subscriberCount;
-                console.log(content.subscribers);
-                content.avatar = data.items[0].snippet.thumbnails.default.url;
-                console.log(content.avatar);
+            });
+            ajax({
+                method: 'get',
+                url: channelById + data.items[0].snippet.channelId + ApiKey,
+            }).then( ({data}) => {
+                setUser({
+                    avatar: data.items[0].snippet.thumbnails.default.url,
+                    nickname: data.items[0].snippet.title,
+                    subscribers: data.items[0].statistics.subscriberCount + ' подписчиков',
+                });
+            });
             })
-        })
-        console.log(content);
-    }, [])
-
-
+    }, []);
 
 
     return (
@@ -85,11 +73,11 @@ export const PlayerVideo = ({items, id}: any) => {
                     • <div className="player-date">{content.date}</div>
                 </div>
                 <div className="player-channel-info">
-                    <div><img className="player-channel-img" src={content.avatar}/>
+                    <div><img className="player-channel-img" src={user.avatar}/>
                     </div>
                     <div className="player-channel-textinfo">
-                        <div className="player-channel">{content.nickname}</div>
-                        <div className="subscribers">{content.subscribers}</div>
+                        <div className="player-channel">{user.nickname}</div>
+                        <div className="subscribers">{user.subscribers}</div>
                     </div>
                 </div>
                 <div className="player-video-description">{content.description}</div>
