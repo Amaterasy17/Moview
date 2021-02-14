@@ -28,7 +28,7 @@ export const PlayerPage = (props: any) => {
         <div>
             <Header></Header>
             <div className="play background">
-                <PlayerVideo items={props.items}></PlayerVideo>
+                <PlayerVideo items={props.items} id={id}></PlayerVideo>
                 <MVideo items={props.mitems}></MVideo>
             </div>
         </div>

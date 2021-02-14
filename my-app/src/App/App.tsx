@@ -145,7 +145,6 @@ export function App() {
         <div>
             <BrowserRouter>
                 <Route path={urls.Root} component={Main}></Route>
-                {/*<PlayerPage items={items1} mitems={items}></PlayerPage>*/}
             </BrowserRouter>
         </div>
     );
