@@ -1,5 +1,5 @@
 import React from 'react';
-import './SearchedVideo.css'
+import './SearchedVideo.scss'
 
 
 export const SearchedVideo = ({items}: any) => {
