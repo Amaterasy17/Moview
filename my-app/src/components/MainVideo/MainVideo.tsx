@@ -33,6 +33,12 @@ export const MainVideo = ({item}: any) => {
 
     const history = useHistory();
 
+    let id:string;
+    item.id.videoId ? id = item.id.videoId : id = item.id;
+    // if (!item.id.videoId) {
+    //     id = item.id;
+    // }
+
     React.useEffect( () => {
         ajax({
             method: 'get',
@@ -56,12 +62,13 @@ export const MainVideo = ({item}: any) => {
     return (
         <div className="main-video">
             <div className="main-image-content">
-                <img className="main-image-content-img" id={item.id} src={video.preview}
+                <img className="main-image-content-img" id={id} src={video.preview}
                      onClick = {(evt) => {
                         // window.history.pushState(null,'null', urls.Video.creator());
                          console.log(item.id);
+                         console.log('haha', id);
                          console.log(urls.Video.creator(item.id));
-                         history.push(urls.Video.creator(item.id));
+                         history.push(urls.Video.creator(id));
                          //return <Redirect to={urls.Video.creator(item.id)}/>
 
                 }} />

@@ -14,10 +14,10 @@ export const PlayerPage = (props: any) => {
     props.items.video = videoUrl + id;
     return (
         <div>
-            <Header></Header>
+            <Header/>
             <div className="play background">
-                <PlayerVideo id={id}></PlayerVideo>
-                <MVideo id={id}></MVideo>
+                <PlayerVideo id={id}/>
+                <MVideo id={id}/>
             </div>
         </div>
     );

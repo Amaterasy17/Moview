@@ -24,7 +24,7 @@ export const MVideo = ({id}: any) => {
 
     return (
         <div className="main">
-            <Video mainVideos={videos}></Video>;
+            <Video mainVideos={videos} idsUrl={videos.map((video:any) => video.id.videoId).join(',')}/>
         </div>
     );
 };
