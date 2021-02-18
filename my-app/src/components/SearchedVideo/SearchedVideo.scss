@@ -1,3 +1,5 @@
+@import "../../styles/vars.scss";
+
 .search__video {
     width: 100%;
     display: flex;
@@ -21,9 +23,9 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow-y: hidden;
-    background: linear-gradient(to right,#e334b5 0%, #9b90df 50%,#84abec 100%); /* Градиент для текста */
-    -webkit-background-clip: text; /* Обрезаем фон по тексту */
-    -webkit-text-fill-color: transparent; /* Прозрачный текст */
+    background: linear-gradient(to right,$grad-start 0%, $grad-middle 50%,$grad-end 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .description_video {
@@ -34,26 +36,26 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow-y: hidden;
-    color:#030303;
+    color:$title-color;
 }
 
 .description__blogger {
     font-size: 2vh;
     font-family: Montserrat-Light;
     margin-left: 1.5vh;
-    color:#030303;
+    color:$title-color;
 }
 
 .time{
     font-size: 2vh;
     font-family: Montserrat-Light;
-    color:#030303;
+    color:$title-color;
 }
 
 .image-content {
     margin-left: 10%;
     width: 24%;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
     border: 2px;
     height: 28vh;
     box-shadow: 0 0 5px rgba(0,0,0,0.3);
@@ -87,7 +89,6 @@
 
 .channel{
     display: flex;
-    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
 }

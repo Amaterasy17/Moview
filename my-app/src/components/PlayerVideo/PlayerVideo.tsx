@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlayerVideo.css'
+import './PlayerVideo.scss'
 import axios from "axios";
 import {ApiKey, channelById, videoById, videoUrl} from "../../configs/ApiUrls";
 

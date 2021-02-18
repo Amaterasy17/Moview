@@ -1,7 +1,10 @@
 import React from 'react'
-import {Link} from "react-router-dom";
 
-import './Header.css'
+import {Link} from "react-router-dom";
+import './Header.scss'
+
+
+
 import {urls} from "../../configs/routes";
 import * as url from "url";
 

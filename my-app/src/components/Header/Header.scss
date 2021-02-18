@@ -1,9 +1,10 @@
+@import "../../styles/vars.scss";
 
 .header {
     display: flex;
     justify-content: start;
     align-items: center;
-    background: #ffffff;
+    background: $white-color;
     top: 0;
     width: 100%;
 }
@@ -12,17 +13,18 @@
     margin-left: 5vw;
 }
 
-
 .logo-img {
     width: 3.1vw;
     height: 3.1vw;
-    margin-top: 0.5vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 }
 
 .header__button {
 
     margin-left: auto;
     margin-right: 5vw;
+    margin-bottom: 1.2vh;
 }
 
 .header__text{
@@ -31,13 +33,12 @@
     font-family: sans-serif;
     display: inline-block;
     font-size: 3vw;
-    margin-top: 0.8vw;
-    background: linear-gradient(to right,#e334b5, #9b90df,#84abec);
+    margin-top: 1vh;
+    background: linear-gradient(to right,$grad-start, $grad-middle,$grad-end);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/** {box-sizing: border-box;}*/
 .formButton {
     position: relative;
     width: 19.75vw;
@@ -47,7 +48,7 @@
 }
 
 .inputButton {
-    background: #ffffff;
+    background: $white-color;
     height: 3.2vw;
     width: 0;
     padding: 0 3.2vw 0 0.99vw;
@@ -72,8 +73,8 @@
 }
 
 .search-button {
-    background: #ffffff;
-    border-color:  #96c7e5;
+    background: $white-color;
+    border-color: $input-border;
     border-width:0.22vw;
     height: 3.2vw;
     width: 3.2vw;
@@ -89,5 +90,5 @@
     content: "\f002";
     font-family: FontAwesome;
     font-size: 1.2vw;
-    color: #bd58b8;
+    color: $input-search-img;
 }
