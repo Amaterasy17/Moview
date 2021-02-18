@@ -56,7 +56,7 @@ export const MainVideo = ({item}: any) => {
                 avatar: data.items[0].snippet.thumbnails.default.url,
             });
         });
-    }, []);
+    }, [item]);
 
 
     return (

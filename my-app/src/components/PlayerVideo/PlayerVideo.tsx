@@ -56,7 +56,7 @@ export const PlayerVideo = ({id}: any) => {
                 });
             });
             })
-    }, []);
+    }, [id]);
 
 
     return (

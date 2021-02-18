@@ -20,7 +20,7 @@ export const MVideo = ({id}: any) => {
         })
 
 
-    }, []);
+    }, [id]);
 
     return (
         <div className="main">

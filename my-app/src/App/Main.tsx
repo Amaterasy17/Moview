@@ -129,10 +129,7 @@ const items1 = {
     subscribers: '456 345 подписчиков',
 }
 
-const VideoID = () => {
-    const { id } = useParams() as any;
-    items1.video =  videoUrl + id;
-}
+
 
 export const Main = () => {
 
@@ -140,13 +137,13 @@ export const Main = () => {
         <div>
             <Switch>
                 <Route path = {urls.Videos}>
-                    <MainPage items = {items}></MainPage>
+                    <MainPage items = {items}/>
                 </Route>
                 <Route path = {urls.Video.mask}
                        render = {(props) => <PlayerPage {...props} items={items1} mitems={items}/>}>
                 </Route>
-                <Route path={urls.Search} render={(props) => <SearchPage {...props} items={items}/>}></Route>
-                <Redirect to={urls.Videos}></Redirect>
+                <Route path={urls.Search} render={(props) => <SearchPage {...props} items={items}/>}/>
+                <Redirect to={urls.Videos}/>
             </Switch>
         </div>
     );
