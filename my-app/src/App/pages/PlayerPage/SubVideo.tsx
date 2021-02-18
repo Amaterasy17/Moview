@@ -27,12 +27,15 @@ export const Video = ( {mainVideos}:any ) => {
             setVideos(data.items);
         });
 
-    });
+    },[]);
 
     return (
         <div className="main">
             {
                 videos.map((item: any) => {
+                    //item.id = item.id.videoId;
+                    item.id = item.id[0];
+                    //console.log('пиздострадания',item.id.videoId)
                     return <MainVideo item={item}></MainVideo>;
                 })
             }

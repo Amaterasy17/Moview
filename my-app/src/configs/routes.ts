@@ -3,7 +3,7 @@ export const urls = {
     Videos: '/videos',
     Video: {
         mask: '/video/:id',
-        creator: () => '/video/${id}',
+        creator: (id:string) => `/video/${id}`,
     },
     Search: '/search/:q',
 }

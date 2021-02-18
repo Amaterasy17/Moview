@@ -125,23 +125,12 @@ const items1 = {
     description: 'Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
         ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
         ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it! Abs Abs Abs! Everyone seems to be asking for a QUICK and short schedule,' +
-        ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
-        ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!',
+        ' so I put together a 2 weeks schedule to help you get closer to those',
     subscribers: '456 345 подписчиков',
 }
 
 const VideoID = () => {
-    console.log(useParams());
     const { id } = useParams() as any;
-    console.log(id);
     items1.video =  videoUrl + id;
 }
 
@@ -150,10 +139,10 @@ export const Main = () => {
     return (
         <div>
             <Switch>
-                <Route path={urls.Videos}>
-                    <MainPage items={items}></MainPage>
+                <Route path = {urls.Videos}>
+                    <MainPage items = {items}></MainPage>
                 </Route>
-                <Route path={urls.Video.mask}
+                <Route path = {urls.Video.mask}
                        render = {(props) => <PlayerPage {...props} items={items1} mitems={items}/>}>
                 </Route>
                 <Route path={urls.Search} render={(props) => <SearchPage {...props} items={items}/>}></Route>

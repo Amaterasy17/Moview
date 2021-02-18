@@ -6,7 +6,6 @@ import {ajax} from "../../../utils/ajax";
 import {ApiKey, mostPopularVideos} from "../../../configs/ApiUrls";
 
 const Main = ({items}: any) => {
-    console.log(items);
     const [videos, setVideos] = React.useState([]);
 
     React.useEffect( () => {
@@ -20,7 +19,7 @@ const Main = ({items}: any) => {
 
 
     return (
-        <div className="main background">
+        <div className="main">
             {
                 videos.map((item: any) => {
                     return <MainVideo item={item}></MainVideo>;
@@ -36,7 +35,9 @@ export const MainPage = (props: any) => {
     return (
         <div>
             <Header></Header>
+            <div className="background">
             <Main items={props.items}></Main>
+            </div>
         </div>
     );
 }

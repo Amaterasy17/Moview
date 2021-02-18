@@ -8,9 +8,6 @@ import '../MainPage/MainPage.css';
 import {videoUrl} from "../../../configs/ApiUrls";
 
 
-
-
-
 export const PlayerPage = (props: any) => {
     console.log(props);
     const { id } = useParams() as any;

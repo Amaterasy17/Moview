@@ -2,6 +2,11 @@ import React from 'react';
 import './MainVideo.css'
 import {ajax} from "../../utils/ajax";
 import {ApiKey, channelById} from "../../configs/ApiUrls";
+import { useHistory } from "react-router-dom";
+import {urls} from "../../configs/routes";
+import {MainPage} from "../../App/pages/MainPage";
+import {PlayerPage} from "../../App/pages/PlayerPage";
+import {SearchPage} from "../../App/pages/SearchPage";
 
 type Video = {
     preview: string,
@@ -17,15 +22,16 @@ export const MainVideo = ({item}: any) => {
     const [video, setVideo] = React.useState({
         preview: item.snippet.thumbnails.medium.url,
         title: item.snippet.title,
-        time: new Date(item.snippet.publishedAt).getDate() + '.' +
+        time: + ' ' + new Date(item.snippet.publishedAt).getDate() + '.' +
             new Date(item.snippet.publishedAt).getMonth() + '.' +
             new Date(item.snippet.publishedAt).getFullYear(),
-        nickname: item.snippet.channelTitle,
+        nickname: item.snippet.channelTitle + ' ',
         duration: item.contentDetails.duration,
         views: item.statistics.viewCount + ' просмотров ',
         avatar: 'jscsjcj',
-    })
+    });
 
+    const history = useHistory();
 
     React.useEffect( () => {
         ajax({
@@ -47,14 +53,20 @@ export const MainVideo = ({item}: any) => {
     }, []);
 
 
-
-
-
     return (
         <div className="main-video">
             <div className="main-image-content">
-                <img className="main-image-content-img" src={video.preview}/>
-                <span className="duration">{video.duration}</span>
+                <img className="main-image-content-img" id={item.id} src={video.preview}
+                     onClick = {(evt) => {
+                        // window.history.pushState(null,'null', urls.Video.creator());
+                         console.log(item.id);
+                         console.log(urls.Video.creator(item.id));
+                         history.push(urls.Video.creator(item.id));
+                         //return <Redirect to={urls.Video.creator(item.id)}/>
+
+                }} />
+
+                <span className="duration" >{video.duration}</span>
                 <span className="views">{video.views}</span>
             </div>
             <div className="bottom-info">
@@ -62,12 +74,13 @@ export const MainVideo = ({item}: any) => {
                 <div className="right-info">
                     <div className="heading">{video.title}</div>
                     <div className="low">
-                        <div className="name-channel">{video.nickname}</div>
+                        <div >{video.nickname}</div>
                         ·
-                        <div className="time"> {video.time}</div>
+                        <div > {video.time}</div>
                     </div>
                 </div>
             </div>
         </div>
+
     );
 }
