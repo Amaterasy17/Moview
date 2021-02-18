@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlayerVideo.css'
+import './PlayerVideo.scss'
 
 
 export const PlayerVideo = ({items}: any) => {

@@ -1,0 +1,21 @@
+.player-back {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    padding-bottom: 0;
+    justify-content: space-around;
+    margin-left: 2%;
+    margin-right: 2%;
+    align-content: start;
+}
+
+.play {
+    height: 88vh;
+    overflow: scroll;
+}
+
+.play::-webkit-scrollbar {
+    width: 0px;
+}
+
+

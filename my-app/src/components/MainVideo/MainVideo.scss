@@ -1,3 +1,5 @@
+@import "../../styles/vars.scss";
+
 .bottom-info {
     margin-top: 8px;
     display: flex;
@@ -17,23 +19,23 @@
 .heading {
     font-weight: 500;
     font-size: 16px;
-    color: #030303;
+    color: $title-color;
     max-width: 33vh;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow-y: hidden;
     font-family: Montserrat-SemiBold;
-    background: linear-gradient(to right, #e334b5 0%, #9b90df 50%, #84abec 100%); /* Градиент для текста */
-    -webkit-background-clip: text; /* Обрезаем фон по тексту */
-    -webkit-text-fill-color: transparent; /* Прозрачный текст */
+    background: linear-gradient(to right, $grad-start 0%, $grad-middle 50%, $grad-end 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .name-channel {
     display: -webkit-box;
     align-items: center;
     font-size: 14px;
-    color: #333;
+    color: $video-inf;
 }
 
 .low {
@@ -42,7 +44,7 @@
     display: flex;
     font-size: 14px;
     align-items: center;
-    color: #333;
+    color: $video-inf;
     margin-top: 0.8vh;
     font-family: Montserrat-Light;
 }
@@ -59,7 +61,7 @@
 
 .main-image-content {
     width: 42vh;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 20px;
     border: 2px;
     height: 26vh;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
