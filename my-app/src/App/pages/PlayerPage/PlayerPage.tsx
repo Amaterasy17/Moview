@@ -1,30 +1,24 @@
 import {Header} from '../../../components/Header/index';
 import {PlayerVideo} from "../../../components/PlayerVideo";
 import {MainVideo} from "../../../components/MainVideo";
+import {MVideo} from "./Video";
+import {useParams} from 'react-router-dom';
 import './PlayerPage.css';
 import '../MainPage/MainPage.css';
+import {videoUrl} from "../../../configs/ApiUrls";
 
-
-const MVideo = ({items}: any) => {
-    return (
-        <div className="player-back">
-            {
-                items.map((item: any) => {
-                    return <MainVideo items={item}></MainVideo>;
-                })
-            }
-        </div>
-    );
-};
 
 
 export const PlayerPage = (props: any) => {
+    console.log(props);
+    const { id } = useParams() as any;
+    props.items.video = videoUrl + id;
     return (
         <div>
-            <Header></Header>
+            <Header/>
             <div className="play background">
-                <PlayerVideo items={props.items}></PlayerVideo>
-                <MVideo items={props.mitems}></MVideo>
+                <PlayerVideo id={id}/>
+                <MVideo id={id}/>
             </div>
         </div>
     );

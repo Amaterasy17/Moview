@@ -31,12 +31,14 @@
     -webkit-text-fill-color: transparent;
 }
 
+
 .name-channel {
     display: -webkit-box;
     align-items: center;
     font-size: 14px;
     color: $video-inf;
 }
+
 
 .low {
     display: -webkit-flex;
@@ -66,15 +68,12 @@
     height: 26vh;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     display: flex;
-    align-items: center;
     overflow: hidden;
     position: relative;
-    display: inline-block;
 }
 
 .main-image-content-img {
-    width: 100%;
-    height: 100%;
+    object-fit: cover;
 }
 
 .main-image-content:hover .views {

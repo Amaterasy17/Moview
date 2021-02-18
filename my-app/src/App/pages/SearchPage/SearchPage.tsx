@@ -17,6 +17,7 @@ const Search = ({items}: any) => {
 
 
 export const SearchPage = (props: any) => {
+    console.log(props);
     console.log(props.items);
     return (
         <div>
