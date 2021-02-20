@@ -1,14 +1,8 @@
 import React from 'react';
-
 import {BrowserRouter, Route} from "react-router-dom";
 import {Main} from "./Main";
-
 import {urls} from "../configs/routes";
-
-
 import '../styles/styles.scss';
-
-
 import {PlayerPage} from "./pages/PlayerPage";
 
 
@@ -37,7 +31,6 @@ const items1 = {
 
 
 const items = [
-
     {
         preview: 'https://i.ytimg.com/vi/2pLT-olgUJs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB2Rn_Ayy_6V-TkbXM8cd2C3HcL8g',
         duration: '12:43',
@@ -191,9 +184,6 @@ const items = [
             ' so I put together a 2 weeks schedule to help you get closer to those defined abs and to lose weight.' +
             ' A 2 weeks program is easier to commit to, and you can always do it again after you finish it!',
     },
-
-
-
 ];
 
 

@@ -18,6 +18,16 @@
     margin-top: 1vh;
 }
 
+.player-channel {
+    font-size: 18px;
+    font-family: Montserrat-Regular;
+}
+
+.subscribers {
+    font-size: 18px;
+    font-family: Montserrat-Regular;
+}
+
 .player-channel-textinfo {
     display: flex;
     flex-direction: column;
@@ -27,6 +37,8 @@
 
 .player-video-description {
     margin-top: 1vh;
+    font-size: 1.9vh;
+    font-family: Montserrat-Regular;
     overflow: scroll;
 }
 
@@ -35,13 +47,15 @@
 }
 
 .player-view {
-    font-size: 14px;
+    font-size: 18px;
+    font-family: Montserrat-Regular;
     color: $video-inf;
     display: inline-block;
 }
 
 .player-date {
-    font-size: 14px;
+    font-size: 18px;
+    font-family: Montserrat-Regular;
     color: $video-inf;
     display: inline-block;
 }

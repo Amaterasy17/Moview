@@ -1,42 +1,14 @@
-import {Header} from '../../../components/Header/index';
-import {MainVideo} from "../../../components/MainVideo";
-import './MainPage.css';
 import React from "react";
-import {ajax} from "../../../utils/ajax";
-import {ApiKey, mostPopularVideos} from "../../../configs/ApiUrls";
+import {Main} from "./MostPopular";
 
-const Main = ({items}: any) => {
-    const [videos, setVideos] = React.useState([]);
-
-    React.useEffect( () => {
-        ajax({
-            method: 'get',
-            url: mostPopularVideos + ApiKey,
-        }).then( ({data}) => {
-            setVideos(data.items);
-        })
-    }, []);
-
-
-    return (
-        <div className="main">
-            {
-                videos.map((item: any) => {
-                    return <MainVideo item={item}></MainVideo>;
-                })
-            }
-        </div>
-    );
-};
+import './MainPage.css';
 
 
 export const MainPage = (props: any) => {
-
     return (
         <div>
-            <Header></Header>
             <div className="background">
-            <Main items={props.items}></Main>
+            <Main items={props.items}/>
             </div>
         </div>
     );

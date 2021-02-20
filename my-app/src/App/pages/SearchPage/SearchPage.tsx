@@ -1,28 +1,15 @@
-import {Header} from '../../../components/Header/index';
-import {SearchedVideo} from "../../../components/SearchedVideo";
-import './SearchPage.css';
+import {useParams} from "react-router-dom";
+import React from "react";
+import {Search} from "./Search";
 
-const Search = ({items}: any) => {
-    console.log(items);
-    return (
-        <div className="search background">
-            {
-                items.map((item: any) => {
-                   return <SearchedVideo items={item}></SearchedVideo>;
-                })
-            }
-        </div>
-    );
-};
+import './SearchPage.css';
 
 
 export const SearchPage = (props: any) => {
-    console.log(props);
-    console.log(props.items);
+    const { q } = useParams() as any;
     return (
-        <div>
-            <Header></Header>
-            <Search items={props.items}></Search>
+        <div  className="background">
+            <Search q={q} id={props.id}/>
         </div>
     );
 }

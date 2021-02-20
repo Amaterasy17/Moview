@@ -9,8 +9,6 @@ export const MVideo = ({id}: any) => {
     const [videos, setVideos] = React.useState<any>([]);
     const [arr, setArr] = React.useState([] as any);
 
-
-
     React.useEffect( () => {
         ajax({
             method: 'get',
@@ -18,8 +16,6 @@ export const MVideo = ({id}: any) => {
         }).then( ({data}) => {
             setVideos(data.items);
         })
-
-
     }, [id]);
 
     return (

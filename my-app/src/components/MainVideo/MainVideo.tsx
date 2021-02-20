@@ -35,9 +35,6 @@ export const MainVideo = ({item}: any) => {
 
     let id:string;
     item.id.videoId ? id = item.id.videoId : id = item.id;
-    // if (!item.id.videoId) {
-    //     id = item.id;
-    // }
 
     React.useEffect( () => {
         ajax({
@@ -58,22 +55,13 @@ export const MainVideo = ({item}: any) => {
         });
     }, [item]);
 
-
-
     return (
-        <div className="main-video">
+        <div className="main-video" key={id}>
             <div className="main-image-content">
                 <img className="main-image-content-img" id={id} src={video.preview}
                      onClick = {(evt) => {
-                        // window.history.pushState(null,'null', urls.Video.creator());
-                         console.log(item.id);
-                         console.log('haha', id);
-                         console.log(urls.Video.creator(item.id));
                          history.push(urls.Video.creator(id));
-                         //return <Redirect to={urls.Video.creator(item.id)}/>
-
                 }} />
-
                 <span className="duration" >{video.duration}</span>
                 <span className="views">{video.views}</span>
             </div>
@@ -82,7 +70,7 @@ export const MainVideo = ({item}: any) => {
                 <div className="right-info">
                     <div className="heading">{video.title}</div>
                     <div className="low">
-                        <div >{video.nickname}</div>
+                        <div className="nickname">{video.nickname}</div>
                         ·
                         <div > {video.time}</div>
                     </div>
