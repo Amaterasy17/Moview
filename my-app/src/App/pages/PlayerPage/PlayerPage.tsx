@@ -10,7 +10,7 @@ import {videoUrl} from "../../../configs/ApiUrls";
 
 export const PlayerPage = (props: any) => {
     const { id } = useParams() as any;
-    props.items.video = videoUrl + id;
+
     return (
         <div>
             <div className="play background">
