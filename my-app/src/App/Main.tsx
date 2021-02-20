@@ -1,15 +1,13 @@
 import React from 'react';
 import {Route, Switch, Redirect, useParams} from 'react-router-dom';
-
 import {MainPage} from "./pages/MainPage";
 import {PlayerPage} from "./pages/PlayerPage";
 import {SearchPage} from "./pages/SearchPage";
-
 import {urls} from '../configs/routes'
 import {videoUrl} from "../configs/ApiUrls";
+import {Header} from "../components/Header";
 
 const items = [
-
     {
         preview: 'https://i.ytimg.com/vi/2pLT-olgUJs/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB2Rn_Ayy_6V-TkbXM8cd2C3HcL8g',
         duration: '12:43',
@@ -130,11 +128,10 @@ const items1 = {
 }
 
 
-
 export const Main = () => {
-
     return (
         <div>
+            <Header/>
             <Switch>
                 <Route path = {urls.Videos}>
                     <MainPage items = {items}/>
@@ -142,7 +139,8 @@ export const Main = () => {
                 <Route path = {urls.Video.mask}
                        render = {(props) => <PlayerPage {...props} items={items1} mitems={items}/>}>
                 </Route>
-                <Route path={urls.Search} render={(props) => <SearchPage {...props} items={items}/>}/>
+                <Route path={urls.Searching.search}
+                       render={(props) => <SearchPage {...props} items={items}/>}/>
                 <Redirect to={urls.Videos}/>
             </Switch>
         </div>

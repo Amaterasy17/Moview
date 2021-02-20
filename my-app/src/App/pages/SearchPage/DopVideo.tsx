@@ -1,18 +1,13 @@
 import React from "react";
-import {MainVideo} from "../../../components/MainVideo";
-import {ajax} from "../../../utils/ajax";
 import {ApiKey, videoById} from "../../../configs/ApiUrls";
-import {useParams} from "react-router-dom";
+import {ajax} from "../../../utils/ajax";
+import {SearchedVideo} from "../../../components/SearchedVideo";
 
-
-export const Video = ( {mainVideos, idsUrl}:any ) => {
+export const DopVideo = ( {mainVideos, idsUrl}:any ) => {
     const [videos, setVideos] = React.useState<any>([]);
 
-
     React.useEffect( () => {
-
         const url : string = videoById + idsUrl + ApiKey;
-
         if (url) {
             ajax({
                 method: 'get',
@@ -21,15 +16,13 @@ export const Video = ( {mainVideos, idsUrl}:any ) => {
                 setVideos(data.items);
             });
         }
-
-
     },[idsUrl]);
 
     return (
-        <div className="main">
+        <div>
             {
                 videos.map((item: any) => {
-                    return <MainVideo item={item}/>
+                    return <SearchedVideo item={item}/>
                 })
             }
         </div>

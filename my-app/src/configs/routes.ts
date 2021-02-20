@@ -5,6 +5,9 @@ export const urls = {
         mask: '/video/:id',
         creator: (id:string) => `/video/${id}`,
     },
-    Search: '/search/:q',
+    Searching: {
+        search: '/search/:q',
+        create: (q:string) => `/search/${q}`,
+    }
 }
 

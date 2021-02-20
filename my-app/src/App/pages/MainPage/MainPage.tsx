@@ -17,12 +17,11 @@ const Main = ({items}: any) => {
         })
     }, []);
 
-
     return (
         <div className="main">
             {
                 videos.map((item: any) => {
-                    return <MainVideo item={item}></MainVideo>;
+                    return <MainVideo item={item}/>
                 })
             }
         </div>
@@ -31,12 +30,10 @@ const Main = ({items}: any) => {
 
 
 export const MainPage = (props: any) => {
-
     return (
         <div>
-            <Header></Header>
             <div className="background">
-            <Main items={props.items}></Main>
+            <Main items={props.items}/>
             </div>
         </div>
     );
