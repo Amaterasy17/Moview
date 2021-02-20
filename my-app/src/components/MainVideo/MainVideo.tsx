@@ -56,7 +56,7 @@ export const MainVideo = ({item}: any) => {
     }, [item]);
 
     return (
-        <div className="main-video">
+        <div className="main-video" key={id}>
             <div className="main-image-content">
                 <img className="main-image-content-img" id={id} src={video.preview}
                      onClick = {(evt) => {
@@ -70,7 +70,7 @@ export const MainVideo = ({item}: any) => {
                 <div className="right-info">
                     <div className="heading">{video.title}</div>
                     <div className="low">
-                        <div >{video.nickname}</div>
+                        <div className="nickname">{video.nickname}</div>
                         ·
                         <div > {video.time}</div>
                     </div>

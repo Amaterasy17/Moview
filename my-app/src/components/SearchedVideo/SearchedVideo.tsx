@@ -2,6 +2,8 @@ import React from 'react';
 import './SearchedVideo.scss'
 import {ajax} from "../../utils/ajax";
 import {ApiKey, channelById, videoById} from "../../configs/ApiUrls";
+import {useHistory} from "react-router-dom";
+import {urls} from '../../configs/routes'
 
 type Video = {
     preview: string,
@@ -27,6 +29,8 @@ export const SearchedVideo = ({item}: any) => {
         avatar: 'jscsjcj',
         description: item.snippet.description,
     });
+
+    const history = useHistory();
 
     let id: string;
     item.id.videoId ? id = item.id.videoId : id = item.id;
@@ -57,7 +61,9 @@ export const SearchedVideo = ({item}: any) => {
     return (
         <div className="search__video">
             <div className="image-content">
-                <img className="image-content__img" src={video.preview}/>
+                <img className="image-content__img" src={video.preview} onClick={ (evt) => {
+                    history.push(urls.Video.creator(id))
+                }}/>
                 <span className="duration">{video.duration}</span>
                 <span className="views">{video.views}</span>
             </div>

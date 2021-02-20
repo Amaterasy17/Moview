@@ -9,6 +9,6 @@ export type Ajax = {
 
 export const ajax = async (body: Ajax) => {
     const response = await axios(body);
-    console.log(response);
+    // console.log(response);
     return response;
 }

@@ -51,6 +51,15 @@
     font-family: Montserrat-Light;
 }
 
+.nickname {
+    max-width: 60%;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
 .main-video {
     cursor: pointer;
     display: flex;
