@@ -1,0 +1,28 @@
+import React from 'react';
+import {Route, Switch, Redirect, useParams} from 'react-router-dom';
+import {MainPage} from "./pages/MainPage";
+import {PlayerPage} from "./pages/PlayerPage";
+import {SearchPage} from "./pages/SearchPage";
+import {urls} from '../configs/routes'
+import {videoUrl} from "../configs/ApiUrls";
+import {Header} from "../components/Header";
+
+
+export const Main = () => {
+    return (
+        <div>
+            <Header/>
+            <Switch>
+                <Route path = {urls.Videos}>
+                    <MainPage/>
+                </Route>
+                <Route path = {urls.Video.mask}
+                       render = {(props) => <PlayerPage {...props}/>}>
+                </Route>
+                <Route path={urls.Searching.search}
+                       render={(props) => <SearchPage {...props}/>}/>
+                <Redirect to={urls.Videos}/>
+            </Switch>
+        </div>
+    );
+}
