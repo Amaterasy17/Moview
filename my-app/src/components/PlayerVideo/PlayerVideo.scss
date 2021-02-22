@@ -1,104 +1,109 @@
 @import "../../styles/styles.scss";
 
 .player-name {
-    font-size: 22px;
-    font-family: Montserrat-SemiBold;
-    background: linear-gradient(to right, $grad-start 0%, $grad-middle 50%, $grad-end 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    max-width: 30vw;
+  font-size: 22px;
+  font-family: Montserrat-SemiBold;
+  background: linear-gradient(
+    to right,
+    $grad-start 0%,
+    $grad-middle 50%,
+    $grad-end 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  max-width: 30vw;
 }
 
 .player-channel-info {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 1vh;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1vh;
 }
 
 .player-channel {
-    font-size: 15px;
-    font-family: Montserrat-Regular;
+  font-size: 15px;
+  font-family: Montserrat-Regular;
 }
 
 .subscribers {
-    font-size: 15px;
-    font-family: Montserrat-Regular;
+  font-size: 15px;
+  font-family: Montserrat-Regular;
 }
 
 .player-channel-textinfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1vw;
 }
 
 .player-video-description {
-    margin-top: 1vh;
-    font-size: 1.9vh;
-    font-family: Montserrat-Regular;
-    overflow: scroll;
+  margin-top: 1vh;
+  font-size: 1.9vh;
+  font-family: Montserrat-Regular;
+  overflow: scroll;
 }
 
 .player-undername {
-    text-align: left;
+  text-align: left;
 }
 
 .player-view {
-    font-size: 15px;
-    font-family: Montserrat-Regular;
-    color: $video-inf;
-    display: inline-block;
+  font-size: 15px;
+  font-family: Montserrat-Regular;
+  color: $video-inf;
+  display: inline-block;
 }
 
 .player-date {
-    font-size: 15px;
-    font-family: Montserrat-Regular;
-    color: $video-inf;
-    display: inline-block;
+  font-size: 15px;
+  font-family: Montserrat-Regular;
+  color: $video-inf;
+  display: inline-block;
 }
 
 .player-channel-img {
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
 }
 
 .player-img {
-    margin-top: 2vh;
-    width: 60vw;
-    height: 68vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 25px;
+  margin-top: 2vh;
+  width: 60vw;
+  height: 68vh;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
 }
 
 .player-image-content {
-    display: flex;
+  display: flex;
 }
 
 .player {
-    display: flex;
-    justify-content: start;
-    margin-left: 3.3vw;
-    margin-bottom: 1vw;
+  display: flex;
+  justify-content: start;
+  margin-left: 3.3vw;
+  margin-bottom: 1vw;
 }
 
 .player-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 3vh;
-    margin-left: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 3vh;
+  margin-left: 2vw;
 }
 
 .player-video-description::-webkit-scrollbar {
-    width: 0px;
+  width: 0px;
 }
 
 .player-video-description {
-    max-height: 49vh;
-    max-width: 30vw;
-    overflow: scroll;
+  max-height: 49vh;
+  max-width: 30vw;
+  overflow: scroll;
 }
