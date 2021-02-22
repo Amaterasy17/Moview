@@ -1,10 +1,7 @@
 import React from 'react'
-
 import {Link, useHistory} from "react-router-dom";
 import './Header.scss'
-
 import {urls} from "../../configs/routes";
-
 
 
 export const Header = () => {

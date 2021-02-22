@@ -6,6 +6,7 @@ import {SearchPage} from "./pages/SearchPage";
 import {urls} from '../configs/routes'
 import {videoUrl} from "../configs/ApiUrls";
 import {Header} from "../components/Header";
+import {Footer} from "../components/Footer/Footer";
 
 
 export const Main = () => {
@@ -22,6 +23,7 @@ export const Main = () => {
                     <MainPage/>
                 </Route>
             </Switch>
+            <Footer/>
         </>
     );
 }

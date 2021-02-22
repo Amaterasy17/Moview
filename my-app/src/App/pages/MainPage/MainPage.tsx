@@ -1,7 +1,7 @@
 import React from "react";
 import {Main} from "./MostPopular";
 
-import './MainPage.css';
+import './MainPage.scss';
 
 
 export const MainPage = (props: any) => {

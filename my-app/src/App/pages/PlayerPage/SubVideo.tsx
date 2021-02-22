@@ -26,7 +26,7 @@ export const Video = ( {mainVideos, idsUrl}:any ) => {
     },[idsUrl]);
 
     return (
-        <div className="main">
+        <div className="player-main">
             {
                 videos.map((item: any) => {
                     return <MainVideo item={item}/>

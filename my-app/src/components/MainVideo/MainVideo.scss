@@ -32,14 +32,6 @@
 }
 
 
-.name-channel {
-    display: -webkit-box;
-    align-items: center;
-    font-size: 14px;
-    color: $video-inf;
-}
-
-
 .low {
     display: -webkit-flex;
     display: -ms-flex;
@@ -52,12 +44,11 @@
 }
 
 .nickname {
-    max-width: 60%;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
     white-space: nowrap;
     overflow: hidden;
-    -webkit-box-orient: vertical;
+    max-width: 17ch;
+    font-size: 14px;
+    font-family: Montserrat-Light;
 }
 
 .main-video {

@@ -5,8 +5,6 @@ import {urls} from "../configs/routes";
 import '../styles/styles.scss';
 
 
-
-
 export function App() {
     return (
         <>

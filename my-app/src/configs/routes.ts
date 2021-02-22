@@ -1,5 +1,4 @@
 export const urls = {
-    Root: '/',
     Videos: '/',
     Video: {
         mask: '/video/:id',
