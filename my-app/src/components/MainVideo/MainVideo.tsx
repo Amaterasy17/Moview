@@ -1,8 +1,8 @@
 import React from "react";
-import { ajax } from "../../utils/ajax";
-import { ApiKey, channelById } from "../../configs/ApiUrls";
+import { ajax } from "@utils/ajax";
+import { ApiKey, channelById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
-import { urls } from "../../configs/routes";
+import { urls } from "@configs/routes";
 import "./MainVideo.scss";
 import { MainPage } from "../../App/pages/MainPage";
 import { PlayerPage } from "../../App/pages/PlayerPage";

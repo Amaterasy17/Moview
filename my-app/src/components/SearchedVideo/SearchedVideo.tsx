@@ -1,9 +1,9 @@
 import React from "react";
 import "./SearchedVideo.scss";
-import { ajax } from "../../utils/ajax";
-import { ApiKey, channelById, videoById } from "../../configs/ApiUrls";
+import { ajax } from "@utils/ajax";
+import { ApiKey, channelById, videoById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
-import { urls } from "../../configs/routes";
+import { urls } from "@configs/routes";
 
 type Video = {
   preview: string;
