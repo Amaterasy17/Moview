@@ -13,12 +13,12 @@ export const Main = () => {
         <>
             <Header/>
             <Switch>
-                <Route path = {urls.Video.mask}
-                       render = {(props) => <PlayerPage {...props}/>}>
+                <Route path={urls.Video.mask}
+                       render={(props) => <PlayerPage {...props}/>}>
                 </Route>
                 <Route path={urls.Searching.search}
                        render={(props) => <SearchPage {...props}/>}/>
-                <Route path = {urls.Videos}>
+                <Route path={urls.Videos}>
                     <MainPage/>
                 </Route>
             </Switch>
