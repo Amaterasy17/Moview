@@ -77,6 +77,7 @@
   height: 68vh;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 25px;
+  cursor: pointer;
 }
 
 .player-image-content {
@@ -88,6 +89,7 @@
   justify-content: start;
   margin-left: 3.3vw;
   margin-bottom: 1vw;
+  cursor: default;
 }
 
 .player-description {

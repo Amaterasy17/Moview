@@ -4,6 +4,8 @@ import { ajax } from "@utils/ajax";
 import { ApiKey, channelById, videoById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
 import { urls } from "@configs/routes";
+import { parseTime } from "@utils/parseTime";
+import { parseViews } from "@utils/parseViews";
 
 type Video = {
   preview: string;
@@ -29,7 +31,7 @@ export const SearchedVideo = ({ item }: any) => {
       new Date(item.snippet.publishedAt).getFullYear(),
     nickname: item.snippet.channelTitle + " ",
     duration: item.contentDetails.duration,
-    views: item.statistics.viewCount + " просмотров ",
+    views: item.statistics.viewCount,
     avatar: "jscsjcj",
     description: item.snippet.description,
   });
@@ -55,7 +57,7 @@ export const SearchedVideo = ({ item }: any) => {
           new Date(item.snippet.publishedAt).getFullYear(),
         nickname: item.snippet.channelTitle,
         duration: item.contentDetails.duration,
-        views: item.statistics.viewCount + " просмотров ",
+        views: item.statistics.viewCount,
         avatar: data.items[0].snippet.thumbnails.default.url,
         description: item.snippet.description,
       });
@@ -72,11 +74,18 @@ export const SearchedVideo = ({ item }: any) => {
             history.push(urls.Video.creator(id));
           }}
         />
-        <span className="duration">{video.duration}</span>
-        <span className="views">{video.views}</span>
+        <span className="duration">{parseTime(video.duration)}</span>
+        <span className="views">{parseViews(video.views)}</span>
       </div>
       <div className="description">
-        <div className="description__name">{video.title}</div>
+        <div
+          className="description__name"
+          onClick={(evt) => {
+            history.push(urls.Video.creator(id));
+          }}
+        >
+          {video.title}
+        </div>
         <div className="time">{video.time}</div>
         <div className="channel_info">
           <div className="channel">

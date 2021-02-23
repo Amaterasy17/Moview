@@ -7,6 +7,8 @@ import "./MainVideo.scss";
 import { MainPage } from "../../App/pages/MainPage";
 import { PlayerPage } from "../../App/pages/PlayerPage";
 import { SearchPage } from "../../App/pages/SearchPage";
+import { parseTime } from "@utils/parseTime";
+import { parseViews } from "@utils/parseViews";
 
 type Video = {
   preview: string;
@@ -31,7 +33,7 @@ export const MainVideo = ({ item }: any) => {
       new Date(item.snippet.publishedAt).getFullYear(),
     nickname: item.snippet.channelTitle + " ",
     duration: item.contentDetails.duration,
-    views: item.statistics.viewCount + " просмотров ",
+    views: item.statistics.viewCount,
     avatar: "jscsjcj",
   });
 
@@ -56,7 +58,7 @@ export const MainVideo = ({ item }: any) => {
           new Date(item.snippet.publishedAt).getFullYear(),
         nickname: item.snippet.channelTitle,
         duration: item.contentDetails.duration,
-        views: item.statistics.viewCount + " просмотров ",
+        views: item.statistics.viewCount,
         avatar: data.items[0].snippet.thumbnails.default.url,
       });
     });
@@ -73,17 +75,24 @@ export const MainVideo = ({ item }: any) => {
             history.push(urls.Video.creator(id));
           }}
         />
-        <span className="duration">{video.duration}</span>
-        <span className="views">{video.views}</span>
+        <span className="duration">{parseTime(video.duration)}</span>
+        <span className="views">{parseViews(video.views)}</span>
       </div>
       <div className="bottom-info">
         <div>
           <img className="channel-logo" src={video.avatar} />
         </div>
         <div className="right-info">
-          <div className="heading">{video.title}</div>
+          <div
+            className="heading"
+            onClick={(evt) => {
+              history.push(urls.Video.creator(id));
+            }}
+          >
+            {video.title}
+          </div>
           <div className="low">
-            <div className="nickname">{video.nickname}</div>·
+            <div className="nickname">{video.nickname}</div> •{" "}
             <div> {video.time}</div>
           </div>
         </div>

@@ -2,9 +2,10 @@ import React from "react";
 import "./PlayerVideo.scss";
 import axios from "axios";
 import { ApiKey, channelById, videoById, videoUrl } from "@configs/ApiUrls";
-
 import { Ajax, ajax } from "@utils/ajax";
 import { Loader } from "../Loader/Loader";
+import { parseViews } from "@utils/parseViews";
+import { parseSubscribers } from "@utils/parseSubscribers";
 
 type VideoContent = {
   video: string;
@@ -42,7 +43,7 @@ export const PlayerVideo = ({ id }: any) => {
       setContent({
         video: videoUrl + id,
         title: data.items[0].snippet.title,
-        views: data.items[0].statistics.viewCount + " просмотров ",
+        views: data.items[0].statistics.viewCount,
         date:
           new Date(data.items[0].snippet.publishedAt).getDate() +
           "." +
@@ -58,8 +59,7 @@ export const PlayerVideo = ({ id }: any) => {
         setUser({
           avatar: data.items[0].snippet.thumbnails.default.url,
           nickname: data.items[0].snippet.title,
-          subscribers:
-            data.items[0].statistics.subscriberCount + " подписчиков",
+          subscribers: data.items[0].statistics.subscriberCount,
         });
         setIsLoading(false);
       });
@@ -82,7 +82,7 @@ export const PlayerVideo = ({ id }: any) => {
           <div className="player-description">
             <div className="player-name">{content.title}</div>
             <div className="player-undername">
-              <div className="player-view">{content.views}</div>•{" "}
+              <div className="player-view">{parseViews(content.views)}</div> •{" "}
               <div className="player-date">{content.date}</div>
             </div>
             <div className="player-channel-info">
@@ -91,7 +91,9 @@ export const PlayerVideo = ({ id }: any) => {
               </div>
               <div className="player-channel-textinfo">
                 <div className="player-channel">{user.nickname}</div>
-                <div className="subscribers">{user.subscribers}</div>
+                <div className="subscribers">
+                  {parseSubscribers(user.subscribers)}
+                </div>
               </div>
             </div>
             <div className="player-video-description">

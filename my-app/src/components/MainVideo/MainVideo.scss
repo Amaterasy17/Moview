@@ -34,6 +34,7 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
 
 .low {
@@ -56,13 +57,13 @@
 }
 
 .main-video {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   margin-top: 1.5vh;
   padding-right: 3vh;
   padding-left: 2vh;
   margin-bottom: 3vh;
+  cursor: default;
 }
 
 .main-image-content {
@@ -78,6 +79,7 @@
 
 .main-image-content-img {
   object-fit: cover;
+  cursor: pointer;
 }
 
 .main-image-content:hover .views {

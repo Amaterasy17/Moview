@@ -2,7 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     height: 86.5vh;
-    padding-bottom: 0;
     overflow: scroll;
     justify-content: space-around;
     align-content: start;
@@ -10,5 +9,5 @@
 }
 
 .main::-webkit-scrollbar {
-    width: 0px;
+    display: none;
 }
