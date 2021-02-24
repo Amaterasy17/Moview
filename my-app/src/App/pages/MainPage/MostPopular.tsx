@@ -10,19 +10,8 @@ import { Meta } from "@utils/Meta";
 const Main = ({ items }: any) => {
   const store = useLocal(() => new MainPageStore());
 
-  //
-  // const [videos, setVideos] = React.useState([]);
-  // const [isLoading, setIsLoading] = React.useState(true);
-
   React.useEffect(() => {
     store.fetch();
-    // ajax({
-    //   method: "get",
-    //   url: mostPopularVideos + ApiKey,
-    // }).then(({ data }) => {
-    //   setVideos(data.items);
-    //   setIsLoading(false);
-    // });
   }, []);
 
   return (
