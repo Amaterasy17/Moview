@@ -1,93 +1,199 @@
 @import "../../styles/vars.scss";
 
-.header {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  background: $white-color;
-  top: 0;
-  width: 100%;
-}
+  .header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: $white-color;
+    top: 0;
+    width: 100%;
+  }
 
-.header__logo1 {
-  margin-left: 5vw;
-}
+  .header__logo1 {
+    margin-left: 5vw;
+  }
 
-.logo-img {
-  width: 3.1vw;
-  height: 3.1vw;
-  margin-top: 0.5vh;
-  margin-bottom: 0.5vh;
-}
+  .logo-img {
+    width: 3.1vw;
+    height: 3.1vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+  }
 
-.header__button {
-  margin-left: auto;
-  margin-right: 5vw;
-  margin-bottom: 1.2vh;
-}
+  .header__button {
+    margin-left: auto;
+    margin-right: 5vw;
+    margin-bottom: 1.2vh;
+  }
 
-.header__text {
-  flex-basis: 9vw;
-  text-align: center;
-  font-family: sans-serif;
-  display: inline-block;
-  font-size: 3vw;
-  margin-top: 1vh;
-  background: linear-gradient(to right, $grad-start, $grad-middle, $grad-end);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+  .header__text {
+    flex-basis: 9vw;
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    font-size: 3vw;
+    margin-top: 1vh;
+    background: linear-gradient(to right, $grad-start, $grad-middle, $grad-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
-.formButton {
-  position: relative;
-  width: 19.75vw;
-  margin: 0 auto;
-  box-sizing: border-box;
-  height: 2.76vw;
-}
+  .formButton {
+    position: relative;
+    width: 19.75vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 2.76vw;
+  }
 
-.inputButton {
-  background: $white-color;
-  height: 3.2vw;
-  width: 0;
-  padding: 0 3.2vw 0 0.99vw;
-  border: none;
-  border-bottom: 0.13vw solid transparent;
-  box-sizing: border-box;
-  outline: none;
-  background: transparent;
-  transition: 0.4s cubic-bezier(0, 0.8, 0, 1);
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 2;
-}
+  .inputButton {
+    background: $white-color;
+    height: 3.2vw;
+    width: 0;
+    padding: 0 3.2vw 0 0.99vw;
+    border: none;
+    border-bottom: 0.13vw solid transparent;
+    box-sizing: border-box;
+    outline: none;
+    background: transparent;
+    transition: 0.4s cubic-bezier(0, 0.8, 0, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
 
-.inputButton:focus {
-  width: 19.75vw;
-  z-index: 1;
-  border-bottom: 0.15vw solid #96c7e5;
-  right: 8%;
-  font-size: 2vh;
-}
+  .inputButton:focus {
+    width: 19.75vw;
+    z-index: 1;
+    border-bottom: 0.15vw solid #96c7e5;
+    right: 8%;
+    font-size: 2vh;
+  }
 
-.search-button {
-  background: $white-color;
-  border-color: $input-border;
-  border-width: 0.22vw;
-  height: 3.2vw;
-  width: 3.2vw;
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  .search-button {
+    background: $white-color;
+    border-color: $input-border;
+    border-width: 0.22vw;
+    height: 3.2vw;
+    width: 3.2vw;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
-.search-button:before {
-  content: "\f002";
-  font-family: FontAwesome;
-  font-size: 1.2vw;
-  color: $input-search-img;
+  .search-button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 1.2vw;
+    color: $input-search-img;
+  }
+
+
+
+
+
+
+@media screen and (max-width: 1024px){
+
+  .header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background: $white-color;
+    top: 0;
+    width: 100%;
+  }
+
+  .header__text {
+    flex-basis: 14vw;
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    font-size: 5vw;
+    margin-bottom: 1.2vh;
+    color:black;
+    background: linear-gradient(to right, $grad-start, $grad-middle, $grad-end);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .search-button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 2vw;
+    color: $input-search-img;
+    display: flex;
+    margin-left:  -0.1vw;
+  }
+
+  .search-button {
+    background: $white-color;
+    border-color: $input-border;
+    border-width: 0.22vw;
+    height: 5vw;
+    width: 5vw;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+
+  .inputButton:focus {
+    width: 30vw;
+    z-index: 1;
+    border-bottom: 0.15vw solid #96c7e5;
+    right: 8%;
+    font-size: 1.5vh;
+    margin-top: 1.1vh;
+    autocomplete:off;
+  }
+
+  .logo-img {
+    width: 5vw;
+    height: 5vw;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+  }
+
+  .header__logo1 {
+    margin-left: 5vw;
+  }
+
+  .header__button {
+    margin-left: auto;
+    margin-right: 5vw;
+    margin-bottom: 1.2vh;
+  }
+
+  .formButton {
+    position: relative;
+    width: 19.75vw;
+    margin: 0 auto;
+    box-sizing: border-box;
+    height: 2.76vw;
+  }
+
+  inputButton {
+    background: $white-color;
+    height: 3.2vw;
+    width: 0;
+    padding: 0 3.2vw 0 0.99vw;
+    border: none;
+    border-bottom: 0.13vw solid transparent;
+    box-sizing: border-box;
+    outline: none;
+    background: transparent;
+    transition: 0.4s cubic-bezier(0, 0.8, 0, 1);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+  }
 }

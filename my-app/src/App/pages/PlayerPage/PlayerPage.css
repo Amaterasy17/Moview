@@ -16,3 +16,10 @@
     margin: 1vh 2% 0;
 }
 
+@media screen and (max-width: 1024px){
+
+    .play {
+        height: 91vh;
+        overflow: scroll;
+    }
+}

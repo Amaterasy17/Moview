@@ -9,6 +9,7 @@ import { PlayerPage } from "../../App/pages/PlayerPage";
 import { SearchPage } from "../../App/pages/SearchPage";
 import { parseTime } from "@utils/parseTime";
 import { parseViews } from "@utils/parseViews";
+import { parseDate } from "@utils/parseDate";
 
 type Video = {
   preview: string;
@@ -93,7 +94,7 @@ export const MainVideo = ({ item }: any) => {
           </div>
           <div className="low">
             <div className="nickname">{video.nickname}</div> •{" "}
-            <div> {video.time}</div>
+            <div> {parseDate(video.time)}</div>
           </div>
         </div>
       </div>

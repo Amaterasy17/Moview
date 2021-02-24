@@ -6,6 +6,7 @@ import { Ajax, ajax } from "@utils/ajax";
 import { Loader } from "../Loader/Loader";
 import { parseViews } from "@utils/parseViews";
 import { parseSubscribers } from "@utils/parseSubscribers";
+import { parseDate } from "@utils/parseDate";
 
 type VideoContent = {
   video: string;
@@ -83,7 +84,7 @@ export const PlayerVideo = ({ id }: any) => {
             <div className="player-name">{content.title}</div>
             <div className="player-undername">
               <div className="player-view">{parseViews(content.views)}</div> •{" "}
-              <div className="player-date">{content.date}</div>
+              <div className="player-date">{parseDate(content.date)}</div>
             </div>
             <div className="player-channel-info">
               <div>
