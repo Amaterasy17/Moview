@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ApiRes } from "@utils/apiTypes";
 
 export {};
 
@@ -8,7 +9,17 @@ export type Ajax = {
 };
 
 export const ajax = async (body: Ajax) => {
-  const response = await axios(body);
-  // console.log(response);
-  return response;
+  try {
+    const response = await axios(body);
+    return {
+      isError: false,
+      data: response.data,
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      isError: true,
+      data: null,
+    };
+  }
 };
