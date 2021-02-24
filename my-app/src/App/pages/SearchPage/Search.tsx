@@ -3,13 +3,12 @@ import {
   searchAnalogVideos,
   searchVideo,
   videoUrl,
-} from "../../../configs/ApiUrls";
+} from "@configs/ApiUrls";
 import React from "react";
-import { ajax } from "../../../utils/ajax";
+import { ajax } from "@utils/ajax";
 import { DopVideo } from "./DopVideo";
-
 import "./SearchPage.css";
-import { Loader } from "../../../components/Loader/Loader";
+import { Loader } from "@components/Loader/Loader";
 
 export const Search = ({ q }: any, { id }: any) => {
   const [videos, setVideos] = React.useState<any>([]);
@@ -24,6 +23,7 @@ export const Search = ({ q }: any, { id }: any) => {
       setIsLoading(false);
     });
   }, [q]);
+
 
   return (
     <div className="search">

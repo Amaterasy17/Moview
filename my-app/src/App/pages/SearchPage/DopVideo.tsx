@@ -1,7 +1,8 @@
 import React from "react";
-import { ApiKey, videoById } from "../../../configs/ApiUrls";
-import { ajax } from "../../../utils/ajax";
-import { SearchedVideo } from "../../../components/SearchedVideo";
+import { ApiKey, videoById } from "@configs/ApiUrls";
+import { ajax } from "@utils/ajax";
+import { SearchedVideo } from "@components/SearchedVideo";
+
 
 export const DopVideo = ({ mainVideos, idsUrl }: any) => {
   const [videos, setVideos] = React.useState<any>([]);

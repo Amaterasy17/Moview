@@ -6,7 +6,8 @@ import { SearchPage } from "./pages/SearchPage";
 import { urls } from "../configs/routes";
 import { videoUrl } from "../configs/ApiUrls";
 import { Header } from "../components/Header";
-import { Footer } from "../components/Footer/Footer";
+import { Footer } from "@components/Footer/Footer";
+
 
 export const Main = () => {
   return (
@@ -15,8 +16,8 @@ export const Main = () => {
       <Switch>
         <Route
           path={urls.Video.mask}
-          render={(props) => <PlayerPage {...props} />}
-        />
+          render={(props) => <PlayerPage {...props} />} />
+
         <Route
           path={urls.Searching.search}
           render={(props) => <SearchPage {...props} />}

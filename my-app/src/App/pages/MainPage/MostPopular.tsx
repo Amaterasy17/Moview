@@ -1,9 +1,10 @@
-import { MainVideo } from "../../../components/MainVideo";
+import { MainVideo } from "@components/MainVideo";
 import "./MainPage.scss";
 import React from "react";
-import { ajax } from "../../../utils/ajax";
-import { ApiKey, mostPopularVideos } from "../../../configs/ApiUrls";
-import { Loader } from "../../../components/Loader/Loader";
+import { ajax } from "@utils/ajax";
+import { ApiKey, mostPopularVideos } from "@configs/ApiUrls";
+import { Loader } from "@components/Loader/Loader";
+
 
 export const Main = ({ items }: any) => {
   const [videos, setVideos] = React.useState([]);
