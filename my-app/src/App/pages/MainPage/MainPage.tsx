@@ -1,5 +1,5 @@
 import React from "react";
-import { Main } from "./MostPopular";
+import Main from "./MostPopular";
 
 import "./MainPage.scss";
 
