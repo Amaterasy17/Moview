@@ -1,15 +1,14 @@
 import React from "react";
-import {Main} from "./MostPopular";
+import { Main } from "./MostPopular";
 
-import './MainPage.css';
-
+import "./MainPage.scss";
 
 export const MainPage = (props: any) => {
-    return (
-        <div>
-            <div className="background">
-            <Main items={props.items}/>
-            </div>
-        </div>
-    );
-}
+  return (
+    <div>
+      <div className="background">
+        <Main items={props.items} />
+      </div>
+    </div>
+  );
+};

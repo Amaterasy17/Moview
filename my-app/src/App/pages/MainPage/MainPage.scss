@@ -1,17 +1,14 @@
-.play {
-  height: 88vh;
-  overflow: scroll;
-}
-
-.play::-webkit-scrollbar {
-  width: 0px;
-}
-
-.player-main {
+.main {
   display: flex;
   flex-wrap: wrap;
+  height: 86.5vh;
   padding-bottom: 0;
+  overflow: scroll;
   justify-content: space-around;
   align-content: start;
   margin: 1vh 2% 0;
+}
+
+.main::-webkit-scrollbar {
+  width: 0px;
 }

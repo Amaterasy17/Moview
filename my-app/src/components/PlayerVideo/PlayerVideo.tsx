@@ -4,6 +4,7 @@ import axios from "axios";
 import {ApiKey, channelById, videoById, videoUrl} from "../../configs/ApiUrls";
 
 import {Ajax, ajax} from '../../utils/ajax'
+import {Loader} from "../Loader/Loader";
 
 type VideoContent = {
     video: string,
@@ -24,6 +25,8 @@ export const PlayerVideo = ({id}: any) => {
         date: '',
         description: undefined,
         });
+
+    const [isLoading, setIsLoading] = React.useState(true);
 
     const [user, setUser] = React.useState({
         avatar: undefined,
@@ -54,6 +57,7 @@ export const PlayerVideo = ({id}: any) => {
                     nickname: data.items[0].snippet.title,
                     subscribers: data.items[0].statistics.subscriberCount + ' подписчиков',
                 });
+                setIsLoading(false);
             });
             })
     }, [id]);
@@ -61,27 +65,32 @@ export const PlayerVideo = ({id}: any) => {
 
     return (
         <div className="player">
+            {isLoading && <Loader/>}
+            { !isLoading &&
+            <>
             <div className="player-image-content">
-                < iframe className="player-img" src={content.video}
-                         frameBorder="0" allowFullScreen>
-                </iframe>
-            </div>
-            <div className="player-description">
+                    < iframe className="player-img" src={content.video}
+                             frameBorder="0" allowFullScreen>
+                    </iframe>
+                </div>
+                <div className="player-description">
                 <div className="player-name">{content.title}</div>
                 <div className="player-undername">
-                    <div className="player-view">{content.views}</div>
-                    • <div className="player-date">{content.date}</div>
+                <div className="player-view">{content.views}</div>
+                • <div className="player-date">{content.date}</div>
                 </div>
                 <div className="player-channel-info">
-                    <div><img className="player-channel-img" src={user.avatar}/>
-                    </div>
-                    <div className="player-channel-textinfo">
-                        <div className="player-channel">{user.nickname}</div>
-                        <div className="subscribers">{user.subscribers}</div>
-                    </div>
+                <div><img className="player-channel-img" src={user.avatar}/>
+                </div>
+                <div className="player-channel-textinfo">
+                <div className="player-channel">{user.nickname}</div>
+                <div className="subscribers">{user.subscribers}</div>
+                </div>
                 </div>
                 <div className="player-video-description">{content.description}</div>
-            </div>
+                </div>
+            </>
+            }
         </div>
 
     );

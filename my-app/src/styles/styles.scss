@@ -6,7 +6,11 @@ body{
 }
 
 .background{
-    background: linear-gradient(to bottom, $white-color, #f2f0fb);
+    background: linear-gradient(to bottom, $white-color, $violet-color);
+}
+
+.background-footer{
+    background: linear-gradient(to bottom, $violet-color, $white-color );
 }
 
 @font-face {
