@@ -6,6 +6,7 @@ import {
   searchVideo,
   videoById,
 } from "@configs/ApiUrls";
+
 import { Video } from "./SubVideo";
 
 export const MVideo = ({ id }: any) => {

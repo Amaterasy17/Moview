@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import "./PlayerPage.css";
 import "../MainPage/MainPage.scss";
 
+
 export const PlayerPage = (props: any) => {
   const { id } = useParams() as any;
 

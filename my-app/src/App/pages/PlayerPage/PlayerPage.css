@@ -1,6 +1,6 @@
 .play {
-    height: 88vh;
-    overflow: scroll;
+  height: 88vh;
+  overflow: scroll;
 }
 
 .play::-webkit-scrollbar {
@@ -8,11 +8,10 @@
 }
 
 .player-main {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 0;
-    justify-content: space-around;
-    align-content: start;
-    margin: 1vh 2% 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 0;
+  justify-content: space-around;
+  align-content: start;
+  margin: 1vh 2% 0;
 }
-
