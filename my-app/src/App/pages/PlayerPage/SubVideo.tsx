@@ -1,7 +1,7 @@
 import React from "react";
 import { MainVideo } from "@components/MainVideo";
-import { ajax } from "@utils/ajax";
-import { ApiKey, videoById } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { videoById } from "@configs/ApiUrls";
 import { useParams } from "react-router-dom";
 
 export const Video = ({ mainVideos, idsUrl }: any) => {

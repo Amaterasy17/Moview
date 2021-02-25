@@ -1,24 +1,11 @@
 import React from "react";
-import { ajax } from "@utils/ajax";
-import { ApiKey, channelById } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { channelById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
 import { urls } from "@configs/routes";
 import "./MainVideo.scss";
-import { MainPage } from "../../App/pages/MainPage";
-import { PlayerPage } from "../../App/pages/PlayerPage";
-import { SearchPage } from "../../App/pages/SearchPage";
 import { parseTime } from "@utils/parseTime";
 import { parseViews } from "@utils/parseViews";
-
-type Video = {
-  preview: string;
-  duration: string;
-  views: string;
-  avatar: string;
-  title: string;
-  nickname: string;
-  time: string;
-};
 
 export const MainVideo = ({ item }: any) => {
   const [video, setVideo] = React.useState({

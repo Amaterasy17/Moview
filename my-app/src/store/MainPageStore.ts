@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta } from "@utils/Meta";
 import { action, makeObservable, observable } from "mobx";
-import { ajax } from "@utils/ajax";
-import { ApiKey, mostPopularVideos } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { mostPopularVideos } from "@configs/ApiUrls";
 
 export class MainPageStore {
   videos: any = [];
