@@ -1,8 +1,8 @@
 import React from "react";
 import "./PlayerVideo.scss";
 import axios from "axios";
-import { ApiKey, channelById, videoById, videoUrl } from "@configs/ApiUrls";
-import { Ajax, ajax } from "@utils/ajax";
+import { channelById, videoById, videoUrl } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
 import { Loader } from "../Loader/Loader";
 import { parseViews } from "@utils/parseViews";
 import { parseSubscribers } from "@utils/parseSubscribers";

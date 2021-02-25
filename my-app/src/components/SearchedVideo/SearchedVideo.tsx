@@ -1,7 +1,7 @@
 import React from "react";
 import "./SearchedVideo.scss";
-import { ajax } from "@utils/ajax";
-import { ApiKey, channelById, videoById } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { channelById, videoById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
 import { urls } from "@configs/routes";
 import { parseTime } from "@utils/parseTime";
