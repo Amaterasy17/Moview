@@ -10,3 +10,7 @@
 .search::-webkit-scrollbar {
   display: none;
 }
+
+.dopVideo {
+  height: 100px;
+}
