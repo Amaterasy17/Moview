@@ -11,6 +11,7 @@ export const searchAnalogVideos =
 export const mostPopularVideos =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=12&regionCode=RU";
 
+
 // let ApiKey: string = "&key=AIzaSyCnpNDwgqURJK3N3v4-hKJvt1CYRaltfYc";
 // export default ApiKey;
 
@@ -18,6 +19,7 @@ export const searching =
   "https://youtube.googleapis.com/youtube/v3/search?part=snippet%2C%20id&maxResults=12&type=video&q=";
 
 export const PageToken = "&pageToken=";
+
 
 //'&key=AIzaSyCnpNDwgqURJK3N3v4-hKJvt1CYRaltfYc';
 

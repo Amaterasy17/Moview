@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import { urls } from "@configs/routes";
 import { parseTime } from "@utils/parseTime";
 import { parseViews } from "@utils/parseViews";
+import { parseSubscribers } from "@utils/parseSubscribers";
+import { parseDate } from "@utils/parseDate";
 
 type Video = {
   preview: string;
@@ -16,6 +18,7 @@ type Video = {
   nickname: string;
   time: string;
   description: string;
+  subscribers: string;
 };
 
 export const SearchedVideo = ({ item }: any) => {
@@ -34,6 +37,7 @@ export const SearchedVideo = ({ item }: any) => {
     views: item.statistics.viewCount,
     avatar: "jscsjcj",
     description: item.snippet.description,
+    subscribers: "jhj",
   });
 
   const history = useHistory();
@@ -60,6 +64,7 @@ export const SearchedVideo = ({ item }: any) => {
         views: item.statistics.viewCount,
         avatar: data.items[0].snippet.thumbnails.default.url,
         description: item.snippet.description,
+        subscribers: data.items[0].statistics.subscriberCount,
       });
     });
   }, []);
@@ -86,13 +91,18 @@ export const SearchedVideo = ({ item }: any) => {
         >
           {video.title}
         </div>
-        <div className="time">{video.time}</div>
+        <div className="time">{parseDate(video.time)}</div>
         <div className="channel_info">
           <div className="channel">
             <div>
               <img className="left_info" src={video.avatar} />
             </div>
-            <div className="description__blogger">{video.nickname}</div>
+            <div className="ch-inf">
+              <div className="description__blogger">{video.nickname}</div>
+              <div className="description__sub">
+                {parseSubscribers(video.subscribers)}
+              </div>
+            </div>
           </div>
           <div className="description_video">{video.description}</div>
         </div>

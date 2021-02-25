@@ -8,7 +8,16 @@
 }
 
 .search::-webkit-scrollbar {
-  display: none;
+
+    display: none;
+}
+
+@media screen and (max-width: 1024px){
+
+    .search {
+        height: 90vh;
+        overflow: scroll;
+    }
 }
 
 .dopVideo {

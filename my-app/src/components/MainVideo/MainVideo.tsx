@@ -6,6 +6,7 @@ import { urls } from "@configs/routes";
 import "./MainVideo.scss";
 import { parseTime } from "@utils/parseTime";
 import { parseViews } from "@utils/parseViews";
+import { parseDate } from "@utils/parseDate";
 
 export const MainVideo = ({ item }: any) => {
   const [video, setVideo] = React.useState({
@@ -80,7 +81,7 @@ export const MainVideo = ({ item }: any) => {
           </div>
           <div className="low">
             <div className="nickname">{video.nickname}</div> •{" "}
-            <div> {video.time}</div>
+            <div> {parseDate(video.time)}</div>
           </div>
         </div>
       </div>
