@@ -24,6 +24,7 @@ export const Search = ({ q }: any, { id }: any) => {
     });
   }, [q]);
 
+
   return (
     <div className="search">
       {isLoading && <Loader />}
