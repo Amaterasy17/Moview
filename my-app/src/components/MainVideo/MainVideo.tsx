@@ -1,6 +1,6 @@
 import React from "react";
-import { ajax } from "@utils/ajax";
-import { ApiKey, channelById } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { channelById } from "@configs/ApiUrls";
 import { useHistory } from "react-router-dom";
 import { urls } from "@configs/routes";
 import "./MainVideo.scss";

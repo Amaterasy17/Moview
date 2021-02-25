@@ -1,8 +1,8 @@
 import React from "react";
 import { action, makeObservable, observable } from "mobx";
 import { Meta } from "@utils/Meta";
-import { ajax } from "@utils/ajax";
-import { ApiKey, channelById, mostPopularVideos } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
+import { channelById, mostPopularVideos } from "@configs/ApiUrls";
 
 type Video = {
   preview: string;

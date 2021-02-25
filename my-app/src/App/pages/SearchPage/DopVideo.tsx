@@ -1,9 +1,9 @@
 import React from "react";
-import { ApiKey, videoById } from "@configs/ApiUrls";
-import { ajax } from "@utils/ajax";
+import { videoById } from "@configs/ApiUrls";
+import { ApiKey, ajax } from "@utils/ajax";
 import { SearchedVideo } from "@components/SearchedVideo";
 
-export const DopVideo = ({ mainVideos, idsUrl }: any) => {
+export const DopVideo = ({ mainVideos, idsUrl, page }: any) => {
   const [videos, setVideos] = React.useState<any>([]);
 
   React.useEffect(() => {
@@ -26,8 +26,8 @@ export const DopVideo = ({ mainVideos, idsUrl }: any) => {
 
   return (
     <div>
-      {videos.map((item: any) => {
-        return <SearchedVideo item={item} key={item.id} />;
+      {videos.map((item: any, index: number) => {
+        return <SearchedVideo item={item} />;
       })}
     </div>
   );

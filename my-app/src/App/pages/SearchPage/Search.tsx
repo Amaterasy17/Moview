@@ -1,5 +1,4 @@
 import {
-  ApiKey,
   searchAnalogVideos,
   searching,
   searchVideo,
@@ -7,7 +6,7 @@ import {
   PageToken,
 } from "@configs/ApiUrls";
 import React from "react";
-import { ajax } from "@utils/ajax";
+import { ApiKey, ajax } from "@utils/ajax";
 import { DopVideo } from "./DopVideo";
 import { Virtuoso } from "react-virtuoso";
 import "./SearchPage.css";
@@ -61,16 +60,14 @@ export const Search = ({ q }: any, { id }: any) => {
           next={loadMore}
           hasMore={true}
           dataLength={videos.length}
-          loader={<h4>Loading...</h4>}
-          onScroll={() => {
-            console.log("Влад пидарас");
-          }}
+          loader={<Loader />}
           scrollableTarget="scrollableDiv"
         >
           {
             <DopVideo
               mainVideos={videos}
               idsUrl={videos.map((video: any) => video.id.videoId).join(",")}
+              page={page}
             />
           }
         </InfiniteScroll>
