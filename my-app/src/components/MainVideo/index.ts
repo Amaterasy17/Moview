@@ -1,1 +1,1 @@
-export {MainVideo} from './MainVideo'
+export { MainVideo } from "./MainVideo";

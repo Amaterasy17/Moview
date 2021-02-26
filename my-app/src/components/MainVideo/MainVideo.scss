@@ -1,94 +1,91 @@
 @import "../../styles/vars.scss";
 
 .bottom-info {
-    margin-top: 8px;
-    display: flex;
-    margin-left: 3%;
+  margin-top: 8px;
+  display: flex;
+  margin-left: 3%;
 }
 
 .channel-logo {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
 }
 
 .right-info {
-    margin-left: 12px;
+  margin-left: 12px;
 }
 
 .heading {
-    font-weight: 500;
-    font-size: 16px;
-    color: $title-color;
-    max-width: 33vh;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow-y: hidden;
-    font-family: Montserrat-SemiBold;
-    background: linear-gradient(to right, $grad-start 0%, $grad-middle 50%, $grad-end 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  color: $title-color;
+  max-width: 33vh;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
+  font-family: Montserrat-SemiBold;
+  background: linear-gradient(
+    to right,
+    $grad-start 0%,
+    $grad-middle 50%,
+    $grad-end 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
 }
-
-
-.name-channel {
-    display: -webkit-box;
-    align-items: center;
-    font-size: 14px;
-    color: $video-inf;
-}
-
 
 .low {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    font-size: 14px;
-    align-items: center;
-    color: $video-inf;
-    margin-top: 0.8vh;
-    font-family: Montserrat-Light;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  color: $video-inf;
+  margin-top: 0.8vh;
+  font-family: Montserrat-Light;
 }
 
 .nickname {
-    max-width: 60%;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    -webkit-box-orient: vertical;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 17ch;
+  font-size: 14px;
+  font-family: Montserrat-Light;
 }
 
 .main-video {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    margin-top: 1.5vh;
-    padding-right: 3vh;
-    padding-left: 2vh;
-    margin-bottom: 3vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5vh;
+  padding-right: 3vh;
+  padding-left: 2vh;
+  margin-bottom: 3vh;
+  cursor: default;
 }
 
 .main-image-content {
-    width: 42vh;
-    border-radius: 20px;
-    border: 2px;
-    height: 26vh;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    display: flex;
-    overflow: hidden;
-    position: relative;
+  width: 42vh;
+  border-radius: 20px;
+  border: 2px;
+  height: 26vh;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  overflow: hidden;
+  position: relative;
 }
 
 .main-image-content-img {
-    object-fit: cover;
+  object-fit: cover;
+  cursor: pointer;
 }
 
 .main-image-content:hover .views {
-    display: block;
+  display: block;
 }
 
 .main-image-content:hover .duration {
-    display: inline-block;
+  display: inline-block;
 }
